@@ -2140,8 +2140,8 @@ impl<T, A: Allocator> VecDeque<T, A> {
     /// buf.extend(1..6);
     ///
     /// let keep = [false, true, true, false, true];
-    /// let mut iter = keep.iter();
-    /// buf.retain(|_| *iter.next().unwrap());
+    /// let mut iter = keep.into_iter();
+    /// buf.retain(|_| iter.next().unwrap());
     /// assert_eq!(buf, [2, 3, 5]);
     /// ```
     #[stable(feature = "vec_deque_retain", since = "1.4.0")]

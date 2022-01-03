@@ -166,7 +166,7 @@ mod spec_extend;
 /// vec[0] = 7;
 /// assert_eq!(vec[0], 7);
 ///
-/// vec.extend([1, 2, 3].iter().copied());
+/// vec.extend([1, 2, 3]);
 ///
 /// for x in &vec {
 ///     println!("{}", x);
@@ -1439,8 +1439,8 @@ impl<T, A: Allocator> Vec<T, A> {
     /// ```
     /// let mut vec = vec![1, 2, 3, 4, 5];
     /// let keep = [false, true, true, false, true];
-    /// let mut iter = keep.iter();
-    /// vec.retain(|_| *iter.next().unwrap());
+    /// let mut iter = keep.into_iter();
+    /// vec.retain(|_| iter.next().unwrap());
     /// assert_eq!(vec, [2, 3, 5]);
     /// ```
     #[stable(feature = "rust1", since = "1.0.0")]
@@ -2110,7 +2110,7 @@ impl<T, A: Allocator> Vec<T, A> {
     /// v.reserve(10);
     ///
     /// let (init, uninit) = v.split_at_spare_mut();
-    /// let sum = init.iter().copied().sum::<u32>();
+    /// let sum = init.into_iter().sum::<u32>();
     ///
     /// // Fill in the next 4 elements.
     /// uninit[0].write(sum);

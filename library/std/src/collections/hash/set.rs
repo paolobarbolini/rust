@@ -704,7 +704,7 @@ where
     /// use std::collections::HashSet;
     ///
     /// let mut set: HashSet<String> = ["cat", "dog", "horse"]
-    ///     .iter().map(|&pet| pet.to_owned()).collect();
+    ///     .into_iter().map(|pet| pet.to_owned()).collect();
     ///
     /// assert_eq!(set.len(), 3);
     /// for &pet in &["cat", "dog", "fish"] {
@@ -736,7 +736,7 @@ where
     /// use std::collections::HashSet;
     ///
     /// let mut set: HashSet<String> = ["cat", "dog", "horse"]
-    ///     .iter().map(|&pet| pet.to_owned()).collect();
+    ///     .into_iter().map(|pet| pet.to_owned()).collect();
     ///
     /// assert_eq!(set.len(), 3);
     /// for &pet in &["cat", "dog", "fish"] {

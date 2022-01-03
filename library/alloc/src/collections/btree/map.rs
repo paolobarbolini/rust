@@ -1092,8 +1092,8 @@ impl<K, V> BTreeMap<K, V> {
     /// use std::collections::BTreeMap;
     ///
     /// let mut map: BTreeMap<&str, i32> = ["Alice", "Bob", "Carol", "Cheryl"]
-    ///     .iter()
-    ///     .map(|&s| (s, 0))
+    ///     .into_iter()
+    ///     .map(|s| (s, 0))
     ///     .collect();
     /// for (_, balance) in map.range_mut("B".."Cheryl") {
     ///     *balance += 100;
